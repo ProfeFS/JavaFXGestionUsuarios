@@ -1,0 +1,9 @@
+edu\programacion\javafx\dao\UserDAO.class
+edu\programacion\javafx\utils\DatabaseConnection.class
+edu\programacion\javafx\controller\ManageUserController.class
+edu\programacion\javafx\dao\UserDaoImpl.class
+edu\programacion\javafx\model\User.class
+edu\programacion\javafx\JFXGestionUsuarios\App.class
+edu\programacion\javafx\JFXGestionUsuarios\PrimaryController.class
+edu\programacion\javafx\service\UserService.class
+edu\programacion\javafx\JFXGestionUsuarios\SecondaryController.class
