@@ -60,5 +60,17 @@ public class UserService {
 			}
 		}
 		
+		public User getUserByLoginName(String loginName) {
+			try {
+				return userDao.getUserByLoginName(loginName);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				System.err.println("Error al obtener el usuaro por su avatar");
+				System.out.println(e.getMessage());
+				System.out.println(e.getCause());
+				return null;
+			}
+		}
+		
 
 }

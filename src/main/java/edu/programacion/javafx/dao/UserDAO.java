@@ -9,5 +9,6 @@ public interface UserDAO {
 	List<User> getAllUsers() throws SQLException;
 	void saveUser(User user) throws SQLException;
 	void updateUser(User user) throws SQLException; // Actualiza los datos de un usuario
+	User getUserByLoginName(String loginName) throws SQLException;;
 
 }

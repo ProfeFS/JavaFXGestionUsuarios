@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import edu.programacion.javafx.utils.DatabaseConnection;
+
 /**
  * JavaFX App
  */
@@ -18,7 +20,7 @@ public class App extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		scene = new Scene(loadFXML(BASE_PATH + "ManageUser"));
+		scene = new Scene(loadFXML(BASE_PATH + "Login"));
 		stage.setScene(scene);
 		stage.show();
 	}
@@ -31,6 +33,19 @@ public class App extends Application {
 		FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
 		return fxmlLoader.load();
 	}
+	
+	 @Override
+	    public void stop() {
+	        // Realizar cualquier limpieza adicional aquí
+	        handleExit();
+	        System.out.println("Application is closing...");
+	    }
+
+	    private void handleExit() {
+	        // Cerrar conexiones a la base de datos y liberar recursos
+	        DatabaseConnection.closeConnection(); // Asegúrate de tener este método en tu clase Database
+	        System.out.println("Resources have been cleaned up.");
+	    }
 
 	public static void main(String[] args) {
 		launch();

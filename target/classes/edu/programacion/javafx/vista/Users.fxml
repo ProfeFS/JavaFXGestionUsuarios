@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.programacion.javafx.controller.ManageUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="417.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.programacion.javafx.controller.UsersController">
    <children>
       <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="62.0" text="Id" />
       <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="112.0" text="Login Name" />
@@ -17,8 +17,9 @@
       <TextField fx:id="txtName" layoutX="192.0" layoutY="179.0" />
       <TextField fx:id="txtDoc" layoutX="183.0" layoutY="229.0" />
       <TextField fx:id="txtEmail" layoutX="183.0" layoutY="282.0" />
-      <Button layoutX="100.0" layoutY="350.0" mnemonicParsing="false" onAction="#showPreviousUser" text="Anterior" />
-      <Button layoutX="183.0" layoutY="350.0" mnemonicParsing="false" onAction="#showNextUser" text="Siguiente" />
-      <Button fx:id="btnSave" layoutX="281.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateUser" text="Guardar" />
+      <Button layoutX="56.0" layoutY="350.0" mnemonicParsing="false" onAction="#showPreviousUser" text="Anterior" />
+      <Button layoutX="130.0" layoutY="350.0" mnemonicParsing="false" onAction="#showNextUser" text="Siguiente" />
+      <Button fx:id="btnSave" layoutX="207.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateUser" text="Guardar" />
+      <Button fx:id="btnAddUser" disable="true" layoutX="281.0" layoutY="350.0" mnemonicParsing="false" onAction="#showNewUserForm" text="Agregar Usuario" />
    </children>
 </AnchorPane>
