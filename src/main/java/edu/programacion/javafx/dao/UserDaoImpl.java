@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDAO {
 
 		while (rs.next()) {
 			System.out.println("ID: " + rs.getInt("userid") + ", Nombre: " + rs.getString("name"));
-			User u = new User(rs.getString("name"), rs.getString("avatar"), rs.getString("doc"), rs.getString("email"));
+			User u = new User(rs.getInt("userid"), rs.getString("name"), rs.getString("avatar"), rs.getString("doc"), rs.getString("email"));
 			users.add(u);
 		}
 		return users;
@@ -56,10 +56,13 @@ public class UserDaoImpl implements UserDAO {
 	
 	@Override
 	public void updateUser(User user) throws SQLException {
-		String updateSQL = "UPDATE users SET name = ? WHERE id = ?";
+		String updateSQL = "UPDATE users SET doc = ?, name = ?, avatar = ?, email = ? WHERE userid = ?";
 		PreparedStatement updateStmt = conn.prepareStatement(updateSQL);
-		updateStmt.setString(1, "Juana");
-		updateStmt.setInt(2, 26);
+		updateStmt.setString(1, user.getDoc());
+		updateStmt.setString(2, user.getName());
+		updateStmt.setString(3, user.getAvatar());
+		updateStmt.setString(4, user.getEmail());		
+		updateStmt.setInt(5, user.getUserId());
 		
 		int updateCount = updateStmt.executeUpdate();
 		System.out.println("Se han actualizado " + updateCount + " registros" );

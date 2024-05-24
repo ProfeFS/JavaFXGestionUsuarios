@@ -43,7 +43,7 @@ public class UserService {
 	// Actualiza los datos de un usuario
 		public void updateUser(User user) {
 			try {
-				//userDao.updateUser(user);
+				userDao.updateUser(user);
 				System.out.println("Usuario actualizado con éxito: " + user.getName());
 			} catch (Exception e) {
 				System.out.println("Error al actualizar el usuario: " + e.getMessage());

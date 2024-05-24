@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="374.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.programacion.javafx.controller.ManageUserController">
    <children>
-      <Label text="Label" />
+      <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="62.0" text="Id" />
+      <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="112.0" text="Login Name" />
+      <Label alignment="TOP_LEFT" layoutX="68.0" layoutY="174.0" text="Nombre" />
+      <Label alignment="TOP_LEFT" layoutX="68.0" layoutY="233.0" text="Documento" />
+      <Label alignment="TOP_LEFT" layoutX="72.0" layoutY="286.0" text="Email" />
+      <TextField fx:id="txtId" layoutX="192.0" layoutY="58.0" />
+      <TextField fx:id="txtLogName" layoutX="192.0" layoutY="108.0" />
+      <TextField fx:id="txtName" layoutX="192.0" layoutY="179.0" />
+      <TextField fx:id="txtDoc" layoutX="183.0" layoutY="229.0" />
+      <TextField fx:id="txtEmail" layoutX="183.0" layoutY="282.0" />
+      <Button layoutX="100.0" layoutY="350.0" mnemonicParsing="false" onAction="#showPreviousUser" text="Anterior" />
+      <Button layoutX="183.0" layoutY="350.0" mnemonicParsing="false" onAction="#showNextUser" text="Siguiente" />
+      <Button fx:id="btnSave" layoutX="281.0" layoutY="350.0" mnemonicParsing="false" onAction="#updateUser" text="Guardar" />
    </children>
-</VBox>
+</AnchorPane>
