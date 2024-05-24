@@ -4,6 +4,8 @@ import java.util.List;
 
 import edu.programacion.javafx.model.User;
 import edu.programacion.javafx.service.UserService;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.BooleanBinding;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -45,7 +47,8 @@ public class ManageUserController {
 		txtId.setDisable(true);
 		loadUsers();
 		showUserDetails(currentIndex);
-		addChangeListeners();
+		//addChangeListeners();
+		addBindings();
 	}
 
 	private void loadUsers() {
@@ -106,6 +109,23 @@ public class ManageUserController {
         txtLogName.textProperty().addListener(changeListener);
         txtDoc.textProperty().addListener(changeListener);
         txtEmail.textProperty().addListener(changeListener);
+    }
+	
+	//con bindings
+	private void addBindings() {
+        BooleanBinding fieldsChanged = Bindings.createBooleanBinding(() ->
+            !txtName.getText().equals(originalUser.getName()) ||
+            !txtLogName.getText().equals(originalUser.getAvatar()) ||
+            !txtDoc.getText().equals(originalUser.getDoc()) ||
+            !txtEmail.getText().equals(originalUser.getEmail()),
+            
+            txtName.textProperty(),
+            txtLogName.textProperty(),
+            txtDoc.textProperty(),
+            txtEmail.textProperty()
+        );
+
+        btnSave.disableProperty().bind(fieldsChanged.not());
     }
 
 }
